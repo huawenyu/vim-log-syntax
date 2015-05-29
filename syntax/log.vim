@@ -16,7 +16,7 @@ syn match log_trace		'\vT\@.*$'
 syn match ipaddr        /\(\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)\.\)\{3\}\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)/
 syn region log_string 	start=/'/ end=/'/ end=/$/ skip=/\\./
 syn region log_string 	start=/"/ end=/"/ skip=/\\./
-syn match log_number 	'0x[0-9a-fA-F]*\|\[<[0-9a-f]\+>\]\|\<\d[0-9a-fA-F]*'
+"syn match log_number 	'0x[0-9a-fA-F]*\|\[<[0-9a-f]\+>\]\|\<\d[0-9a-fA-F]*'
 
 syn match   log_date '\(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\) [ 0-9]\d *'
 syn match   log_date '\d\{4}-\d\d-\d\d'
@@ -29,7 +29,7 @@ syn keyword syntaxElementKeyword1 RET RETURN CONNECT ACCEPT TCP HTTP HTTPS FTP D
 syn keyword syntaxElementKeyword2 fd policy wad\_helper\_del \_\_wad\_tcp\_port\_sched_write
 
 hi def link log_string 		String
-hi def link log_number 		Number
+"hi def link log_number 		Number
 hi def link log_date 		Constant
 hi def link log_time 		Type
 hi def link log_error 		ErrorMsg
