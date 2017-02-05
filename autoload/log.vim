@@ -15,7 +15,6 @@ function! s:__init__()
         \ '\Vunexpect ',
         \ '\VUNEXPECTED!',
         \ '\Vreject ',
-        \ '\Vunknown ',
         \ '\V exempted ',
         \ '\V failed!',
         \ '\V failed ',
@@ -38,8 +37,11 @@ function! s:__init__()
         \ 'WAD unix stream stream .* sendmsg error ',
         \ '\VFail to ',
         \ '\Vfailed to start IPS session',
+        \ '\VReceived request from client: ',
+        \ '\VForward request to server:',
         \ '^GET\ ',
         \]
+
 
 endfunc
 call s:__init__()
