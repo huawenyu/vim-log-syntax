@@ -52,13 +52,60 @@ syn keyword   KeywordEqStr      policy action nextgroup=mKeywordEqStr skipwhite
 syn keyword  KeywordVals        bypass
 syn match    MatchVals          'POLICY DENIED'
 
+syn match    MatchIngore        '\v^<wad_http_send_http_line_port>.*$'
+syn match    MatchIngore        '\v^<wad_cache_http_send_http_line_port>.*$'
+syn match    MatchIngore        '\v^<wad_http_parser>.*$'
+syn match    MatchIngore        '\v^<wad_http_parse_uri>.*$'
+syn match    MatchIngore        '\v^<wad_http_parse_host>.*$'
+syn match    MatchIngore        '\v^<wad_http_request_reader_run>.*$'
+syn match    MatchIngore        '\v^<wad_http_parse_check_uri>.*$'
+syn match    MatchIngore        '\v^<wad_http_normalize_uri>.*$'
+syn match    MatchIngore        '\v^<wad_http_pre_parse_line>.*$'
+syn match    MatchIngore        '\v^<wad_cache_http_client_preparse_header>.*$'
+syn match    MatchIngore        '\v^<wad_chc_preparse_content_length>.*$'
+syn match    MatchIngore        '\v^<wad_cache_http_send_http_line__>.*$'
+syn match    MatchIngore        '\v^<wad_http_request_get_line>.*$'
+syn match    MatchIngore        '\v^<wad_http_line_get_by_id>.*$'
+syn match    MatchIngore        '\v^<wad_http_request_iterate_bufs>.*$'
+syn match    MatchIngore        '\v^<wad_chc_preparse_content_type>.*$'
+syn match    MatchIngore        '\v^<wad_http_parse_content_type>.*$'
+syn match    MatchIngore        '\v^<wad_chc_preparse_user_agent>.*$'
+syn match    MatchIngore        '\v^<wad_chc_preparse_referer>.*$'
+syn match    MatchIngore        '\v^<wad_chc_preparse_connection>.*$'
+syn match    MatchIngore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
+syn match    MatchIngore        '\v^<wad_fmem_open>.*$'
+syn match    MatchIngore        '\v^<wad_mem_block_pool_alloc>.*$'
+syn match    MatchIngore        '\v^<__wad_mem_block_alloc>.*$'
+syn match    MatchIngore        '\v^<wad_mem_block_pool_free>.*$'
+syn match    MatchIngore        '\v^<__wad_mem_block_free>.*$'
+syn match    MatchIngore        '\v^<wad_mem_pool_release>.*$'
+syn match    MatchIngore        '\v^<__wad_mem_block_free>.*$'
+syn match    MatchIngore        '\v^<wad_mem_block_pool_use>.*$'
+syn match    MatchIngore        '\v^<wad_mem_c_free>.*$'
+syn match    MatchIngore        '\v^<wad_mem_c_malloc>.*$'
+syn match    MatchIngore        '\v^<wad_ssl_port_caps_on_enc_start>.*$'
+syn match    MatchIngore        '\v^<wad_ssl_port_caps_on_enc_done>.*$'
+syn match    MatchIngore        '\v^<wad_tcp_port_transport_read_block>.*$'
+syn match    MatchIngore        '\v^<wad_tcp_port_out_read_block>.*$'
+syn match    MatchIngore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
+syn match    MatchIngore        '\v^<wad_http_send_http_line>.*$'
+syn match    MatchIngore        '\v^<wad_user_node_stats_put>.*$'
+syn match    MatchIngore        '\v^<wad_http_stream_get_line>.*$'
+syn match    MatchIngore        '\v^<wad_http_client_read_header>.*$'
+syn match    MatchIngore        '\v^<wad_http_client_preparse_header>.*$'
+syn match    MatchIngore        '\v^<wad_http_split_empty_line>.*$'
+syn match    MatchIngore        '\v^<wad_http_client_read_request_line>.*$'
+syn match    MatchIngore        '\v^<wad_http_str_canonicalize>.*$'
+syn match    MatchIngore        '\v^<wad_hauth_user_node_alloc>.*$'
+syn match    MatchIngore        '\v^<wad_user_node_stats_hold>.*$'
+syn match    MatchIngore        '\v^<wad_http_conn_request_classify>.*$'
+
 hi def link  log_string         String
 "hi def link log_number         Number
 "hi def link log_date           Constant
 "hi def link log_time           Type
 hi def link  log_error          ErrorMsg
 hi def link  log_warning        WarningMsg
-hi def link  log_trace          Comment
 
 hi def link  ipaddr             Identifier
 hi def link  ipport             Constant
@@ -68,6 +115,8 @@ hi def link  KeywordBasic       Keyword
 hi def link  KeywordKey         Type
 hi def link  KeywordVals        IncSearch
 hi def link  MatchVals          IncSearch
+hi def link  log_trace          NonText
+hi def link  MatchIngore        NonText
 
 hi def link  rdocInlineURL      Identifier
 hi  def link mKeywordEqNum1     WarningMsg
@@ -92,6 +141,8 @@ hi  def link  KeywordEqStr      Macro
 " ##########################################
 "              TEST TEXT HERE
 " ##########################################
+if has("syntax_test")
+
 syn keyword kNormal           vNormal           
 syn keyword kComment          vComment          
 syn keyword kCursorLine       vCursorLine       
@@ -244,6 +295,8 @@ hi def link kWarningMsg       WarningMsg
 hi def link kWildMenu         WildMenu         
 " ##########################################
 
+" end-syntax_test
+endif
 
 let b:current_syntax = "log"
 
