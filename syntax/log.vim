@@ -52,53 +52,53 @@ syn keyword   KeywordEqStr      policy action nextgroup=mKeywordEqStr skipwhite
 syn keyword  KeywordVals        bypass
 syn match    MatchVals          'POLICY DENIED'
 
-syn match    MatchIngore        '\v^<wad_http_send_http_line_port>.*$'
-syn match    MatchIngore        '\v^<wad_cache_http_send_http_line_port>.*$'
-syn match    MatchIngore        '\v^<wad_http_parser>.*$'
-syn match    MatchIngore        '\v^<wad_http_parse_uri>.*$'
-syn match    MatchIngore        '\v^<wad_http_parse_host>.*$'
-syn match    MatchIngore        '\v^<wad_http_request_reader_run>.*$'
-syn match    MatchIngore        '\v^<wad_http_parse_check_uri>.*$'
-syn match    MatchIngore        '\v^<wad_http_normalize_uri>.*$'
-syn match    MatchIngore        '\v^<wad_http_pre_parse_line>.*$'
-syn match    MatchIngore        '\v^<wad_cache_http_client_preparse_header>.*$'
-syn match    MatchIngore        '\v^<wad_chc_preparse_content_length>.*$'
-syn match    MatchIngore        '\v^<wad_cache_http_send_http_line__>.*$'
-syn match    MatchIngore        '\v^<wad_http_request_get_line>.*$'
-syn match    MatchIngore        '\v^<wad_http_line_get_by_id>.*$'
-syn match    MatchIngore        '\v^<wad_http_request_iterate_bufs>.*$'
-syn match    MatchIngore        '\v^<wad_chc_preparse_content_type>.*$'
-syn match    MatchIngore        '\v^<wad_http_parse_content_type>.*$'
-syn match    MatchIngore        '\v^<wad_chc_preparse_user_agent>.*$'
-syn match    MatchIngore        '\v^<wad_chc_preparse_referer>.*$'
-syn match    MatchIngore        '\v^<wad_chc_preparse_connection>.*$'
-syn match    MatchIngore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
-syn match    MatchIngore        '\v^<wad_fmem_open>.*$'
-syn match    MatchIngore        '\v^<wad_mem_block_pool_alloc>.*$'
-syn match    MatchIngore        '\v^<__wad_mem_block_alloc>.*$'
-syn match    MatchIngore        '\v^<wad_mem_block_pool_free>.*$'
-syn match    MatchIngore        '\v^<__wad_mem_block_free>.*$'
-syn match    MatchIngore        '\v^<wad_mem_pool_release>.*$'
-syn match    MatchIngore        '\v^<__wad_mem_block_free>.*$'
-syn match    MatchIngore        '\v^<wad_mem_block_pool_use>.*$'
-syn match    MatchIngore        '\v^<wad_mem_c_free>.*$'
-syn match    MatchIngore        '\v^<wad_mem_c_malloc>.*$'
-syn match    MatchIngore        '\v^<wad_ssl_port_caps_on_enc_start>.*$'
-syn match    MatchIngore        '\v^<wad_ssl_port_caps_on_enc_done>.*$'
-syn match    MatchIngore        '\v^<wad_tcp_port_transport_read_block>.*$'
-syn match    MatchIngore        '\v^<wad_tcp_port_out_read_block>.*$'
-syn match    MatchIngore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
-syn match    MatchIngore        '\v^<wad_http_send_http_line>.*$'
-syn match    MatchIngore        '\v^<wad_user_node_stats_put>.*$'
-syn match    MatchIngore        '\v^<wad_http_stream_get_line>.*$'
-syn match    MatchIngore        '\v^<wad_http_client_read_header>.*$'
-syn match    MatchIngore        '\v^<wad_http_client_preparse_header>.*$'
-syn match    MatchIngore        '\v^<wad_http_split_empty_line>.*$'
-syn match    MatchIngore        '\v^<wad_http_client_read_request_line>.*$'
-syn match    MatchIngore        '\v^<wad_http_str_canonicalize>.*$'
-syn match    MatchIngore        '\v^<wad_hauth_user_node_alloc>.*$'
-syn match    MatchIngore        '\v^<wad_user_node_stats_hold>.*$'
-syn match    MatchIngore        '\v^<wad_http_conn_request_classify>.*$'
+syn match    MatchIgnore        '\v^<wad_http_send_http_line_port>.*$'
+syn match    MatchIgnore        '\v^<wad_cache_http_send_http_line_port>.*$'
+syn match    MatchIgnore        '\v^<wad_http_parser>.*$'
+syn match    MatchIgnore        '\v^<wad_http_parse_uri>.*$'
+syn match    MatchIgnore        '\v^<wad_http_parse_host>.*$'
+syn match    MatchIgnore        '\v^<wad_http_request_reader_run>.*$'
+syn match    MatchIgnore        '\v^<wad_http_parse_check_uri>.*$'
+syn match    MatchIgnore        '\v^<wad_http_normalize_uri>.*$'
+syn match    MatchIgnore        '\v^<wad_http_pre_parse_line>.*$'
+syn match    MatchIgnore        '\v^<wad_cache_http_client_preparse_header>.*$'
+syn match    MatchIgnore        '\v^<wad_chc_preparse_content_length>.*$'
+syn match    MatchIgnore        '\v^<wad_cache_http_send_http_line__>.*$'
+syn match    MatchIgnore        '\v^<wad_http_request_get_line>.*$'
+syn match    MatchIgnore        '\v^<wad_http_line_get_by_id>.*$'
+syn match    MatchIgnore        '\v^<wad_http_request_iterate_bufs>.*$'
+syn match    MatchIgnore        '\v^<wad_chc_preparse_content_type>.*$'
+syn match    MatchIgnore        '\v^<wad_http_parse_content_type>.*$'
+syn match    MatchIgnore        '\v^<wad_chc_preparse_user_agent>.*$'
+syn match    MatchIgnore        '\v^<wad_chc_preparse_referer>.*$'
+syn match    MatchIgnore        '\v^<wad_chc_preparse_connection>.*$'
+syn match    MatchIgnore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
+syn match    MatchIgnore        '\v^<wad_fmem_open>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_block_pool_alloc>.*$'
+syn match    MatchIgnore        '\v^<__wad_mem_block_alloc>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_block_pool_free>.*$'
+syn match    MatchIgnore        '\v^<__wad_mem_block_free>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_pool_release>.*$'
+syn match    MatchIgnore        '\v^<__wad_mem_block_free>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_block_pool_use>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_c_free>.*$'
+syn match    MatchIgnore        '\v^<wad_mem_c_malloc>.*$'
+syn match    MatchIgnore        '\v^<wad_ssl_port_caps_on_enc_start>.*$'
+syn match    MatchIgnore        '\v^<wad_ssl_port_caps_on_enc_done>.*$'
+syn match    MatchIgnore        '\v^<wad_tcp_port_transport_read_block>.*$'
+syn match    MatchIgnore        '\v^<wad_tcp_port_out_read_block>.*$'
+syn match    MatchIgnore        '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
+syn match    MatchIgnore        '\v^<wad_http_send_http_line>.*$'
+syn match    MatchIgnore        '\v^<wad_user_node_stats_put>.*$'
+syn match    MatchIgnore        '\v^<wad_http_stream_get_line>.*$'
+syn match    MatchIgnore        '\v^<wad_http_client_read_header>.*$'
+syn match    MatchIgnore        '\v^<wad_http_client_preparse_header>.*$'
+syn match    MatchIgnore        '\v^<wad_http_split_empty_line>.*$'
+syn match    MatchIgnore        '\v^<wad_http_client_read_request_line>.*$'
+syn match    MatchIgnore        '\v^<wad_http_str_canonicalize>.*$'
+syn match    MatchIgnore        '\v^<wad_hauth_user_node_alloc>.*$'
+syn match    MatchIgnore        '\v^<wad_user_node_stats_hold>.*$'
+syn match    MatchIgnore        '\v^<wad_http_conn_request_classify>.*$'
 
 hi def link  log_string         String
 "hi def link log_number         Number
@@ -115,8 +115,8 @@ hi def link  KeywordBasic       Keyword
 hi def link  KeywordKey         Type
 hi def link  KeywordVals        IncSearch
 hi def link  MatchVals          IncSearch
-hi def link  log_trace          NonText
-hi def link  MatchIngore        NonText
+hi def link  log_trace          Ignore
+hi def link  MatchIgnore        Ignore
 
 hi def link  rdocInlineURL      Identifier
 hi  def link mKeywordEqNum1     WarningMsg
@@ -136,167 +136,6 @@ hi  def link  KeywordEqStr      Macro
 " Sample:
 " Foo asdfasd Bar asdf Foo asdf Bar asdf
 " fff         bbb      fff      bbb
-
-
-" ##########################################
-"              TEST TEXT HERE
-" ##########################################
-if has("syntax_test")
-
-syn keyword kNormal           vNormal           
-syn keyword kComment          vComment          
-syn keyword kCursorLine       vCursorLine       
-syn keyword kCursorColumn     vCursorColumn     
-syn keyword kColorColumn      vColorColumn      
-syn keyword kLineNr           vLineNr           
-syn keyword kNonText          vNonText          
-syn keyword kSpecialKey       vSpecialKey       
-syn keyword kBoolean          vBoolean          
-syn keyword kCharacter        vCharacter        
-syn keyword kNumber           vNumber           
-syn keyword kString           vString           
-syn keyword kConditional      vConditional      
-syn keyword kConstant         vConstant         
-syn keyword kCursor           vCursor           
-syn keyword kDebug            vDebug            
-syn keyword kDefine           vDefine           
-syn keyword kDelimiter        vDelimiter        
-syn keyword kDiffAdd          vDiffAdd          
-syn keyword kDiffChange       vDiffChange       
-syn keyword kDiffDelete       vDiffDelete       
-syn keyword kDiffText         vDiffText         
-syn keyword kDirectory        vDirectory        
-syn keyword kError            vError            
-syn keyword kErrorMsg         vErrorMsg         
-syn keyword kException        vException        
-syn keyword kFloat            vFloat            
-syn keyword kFoldColumn       vFoldColumn       
-syn keyword kFolded           vFolded           
-syn keyword kFunction         vFunction         
-syn keyword kIdentifier       vIdentifier       
-syn keyword kIgnore           vIgnore           
-syn keyword kIncSearch        vIncSearch        
-syn keyword kKeyword          vKeyword          
-syn keyword kLabel            vLabel            
-syn keyword kMacro            vMacro            
-syn keyword kMatchParen       vMatchParen       
-syn keyword kModeMsg          vModeMsg          
-syn keyword kMoreMsg          vMoreMsg          
-syn keyword kOperator         vOperator         
-syn keyword kPmenu            vPmenu            
-syn keyword kPmenuSel         vPmenuSel         
-syn keyword kPmenuSbar        vPmenuSbar        
-syn keyword kPmenuThumb       vPmenuThumb       
-syn keyword kPreCondit        vPreCondit        
-syn keyword kPreProc          vPreProc          
-syn keyword kQuestion         vQuestion         
-syn keyword kRepeat           vRepeat           
-syn keyword kSearch           vSearch           
-syn keyword kSignColumn       vSignColumn       
-syn keyword kSpecialChar      vSpecialChar      
-syn keyword kSpecialComment   vSpecialComment   
-syn keyword kSpecial          vSpecial          
-syn keyword kSpellBad         vSpellBad     
-syn keyword kSpellCap         vSpellCap     
-syn keyword kSpellLocal       vSpellLocal   
-syn keyword kSpellRare        vSpellRare    
-syn keyword kStatement        vStatement        
-syn keyword kStatusLine       vStatusLine       
-syn keyword kStatusLineNC     vStatusLineNC     
-syn keyword kStorageClass     vStorageClass     
-syn keyword kStructure        vStructure        
-syn keyword kTag              vTag              
-syn keyword kTitle            vTitle            
-syn keyword kTodo             vTodo             
-syn keyword kTypedef          vTypedef          
-syn keyword kType             vType             
-syn keyword kUnderlined       vUnderlined       
-syn keyword kVertSplit        vVertSplit        
-syn keyword kVisualNOS        vVisualNOS        
-syn keyword kVisual           vVisual           
-syn keyword kWarningMsg       vWarningMsg       
-syn keyword kWildMenu         vWildMenu         
-
-
-
-" ##########################################
-hi def link kNormal           Normal           
-hi def link kComment          Comment          
-hi def link kCursorLine       CursorLine       
-hi def link kCursorColumn     CursorColumn     
-hi def link kColorColumn      ColorColumn      
-hi def link kLineNr           LineNr           
-hi def link kNonText          NonText          
-hi def link kSpecialKey       SpecialKey       
-hi def link kBoolean          Boolean          
-hi def link kCharacter        Character        
-hi def link kNumber           Number           
-hi def link kString           String           
-hi def link kConditional      Conditional      
-hi def link kConstant         Constant         
-hi def link kCursor           Cursor           
-hi def link kDebug            Debug            
-hi def link kDefine           Define           
-hi def link kDelimiter        Delimiter        
-hi def link kDiffAdd          DiffAdd          
-hi def link kDiffChange       DiffChange       
-hi def link kDiffDelete       DiffDelete       
-hi def link kDiffText         DiffText         
-hi def link kDirectory        Directory        
-hi def link kError            Error            
-hi def link kErrorMsg         ErrorMsg         
-hi def link kException        Exception        
-hi def link kFloat            Float            
-hi def link kFoldColumn       FoldColumn       
-hi def link kFolded           Folded           
-hi def link kFunction         Function         
-hi def link kIdentifier       Identifier       
-hi def link kIgnore           Ignore           
-hi def link kIncSearch        IncSearch        
-hi def link kKeyword          Keyword          
-hi def link kLabel            Label            
-hi def link kMacro            Macro            
-hi def link kMatchParen       MatchParen       
-hi def link kModeMsg          ModeMsg          
-hi def link kMoreMsg          MoreMsg          
-hi def link kOperator         Operator         
-hi def link kPmenu            Pmenu            
-hi def link kPmenuSel         PmenuSel         
-hi def link kPmenuSbar        PmenuSbar        
-hi def link kPmenuThumb       PmenuThumb       
-hi def link kPreCondit        PreCondit        
-hi def link kPreProc          PreProc          
-hi def link kQuestion         Question         
-hi def link kRepeat           Repeat           
-hi def link kSearch           Search           
-hi def link kSignColumn       SignColumn       
-hi def link kSpecialChar      SpecialChar      
-hi def link kSpecialComment   SpecialComment   
-hi def link kSpecial          Special          
-hi def link kSpellBad         SpellBad     
-hi def link kSpellCap         SpellCap     
-hi def link kSpellLocal       SpellLocal   
-hi def link kSpellRare        SpellRare    
-hi def link kStatement        Statement        
-hi def link kStatusLine       StatusLine       
-hi def link kStatusLineNC     StatusLineNC     
-hi def link kStorageClass     StorageClass     
-hi def link kStructure        Structure        
-hi def link kTag              Tag              
-hi def link kTitle            Title            
-hi def link kTodo             Todo             
-hi def link kTypedef          Typedef          
-hi def link kType             Type             
-hi def link kUnderlined       Underlined       
-hi def link kVertSplit        VertSplit        
-hi def link kVisualNOS        VisualNOS        
-hi def link kVisual           Visual           
-hi def link kWarningMsg       WarningMsg       
-hi def link kWildMenu         WildMenu         
-" ##########################################
-
-" end-syntax_test
-endif
 
 let b:current_syntax = "log"
 

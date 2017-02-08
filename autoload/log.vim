@@ -3,6 +3,11 @@ function! s:__init__()
     if exists("s:init")
         return
     endif
+    let s:ignore = synIDattr(synIDtrans(hlID('Ignore')), 'fg')
+    let s:ignore_org = synIDattr(synIDtrans(hlID('Ignore')), 'fg')
+    let s:normal = synIDattr(synIDtrans(hlID('Normal')), 'fg')
+    let s:dark = 233
+
     let s:match_list = [
         \ '\V deny ',
         \ '\V denied ',
@@ -47,17 +52,39 @@ endfunc
 call s:__init__()
 
 
-function! log#Search(file) abort
-    exec 'silent! vimgrep /'. s:match_list[0]. '/\Cj '. a:file
+function! log#log(file) abort
+    let cft = &ft
+    if cft ==# 'log'
+        exec 'silent! vimgrep /'. s:match_list[0]. '/\Cj '. a:file
 
-    for mstr in s:match_list[1:]
-        exec 'silent! vimgrepadd /'. mstr. '/\Cj '. a:file
-    endfor
+        for mstr in s:match_list[1:]
+            exec 'silent! vimgrepadd /'. mstr. '/\Cj '. a:file
+        endfor
 
-    let w_qf = genutils#GetQuickfixWinnr()
-    if w_qf == 0
-        copen
+        let w_qf = genutils#GetQuickfixWinnr()
+        if w_qf == 0
+            copen
+        endif
+    else
+        set ft=log
     endif
+endfunc
+
+
+function! log#Ignore(mode) abort
+    if &ft !=# 'log'
+        return
+    endif
+    if a:mode == 0
+        let s:ignore = s:dark
+    elseif a:mode == 1
+        let s:ignore = s:normal
+    elseif a:mode == 2
+        let s:ignore = s:ignore_org - ((s:ignore_org + 1 - s:dark) / 2)
+    elseif a:mode == 3
+        let s:ignore = s:ignore_org
+    endif
+    exec "hi Ignore ctermfg=". s:ignore
 endfunc
 
 
