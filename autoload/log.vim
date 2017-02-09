@@ -3,8 +3,8 @@ function! s:__init__()
     if exists("s:init")
         return
     endif
-    let s:ignore = synIDattr(synIDtrans(hlID('Ignore')), 'fg')
-    let s:ignore_org = synIDattr(synIDtrans(hlID('Ignore')), 'fg')
+    let s:ignore = synIDattr(synIDtrans(hlID('NonText')), 'fg')
+    let s:ignore_org = synIDattr(synIDtrans(hlID('NonText')), 'fg')
     let s:normal = synIDattr(synIDtrans(hlID('Normal')), 'fg')
     let s:dark = 233
 
@@ -121,8 +121,7 @@ endfunc
 
 
 function! log#log(file) abort
-    let cft = &ft
-    if cft ==# 'log'
+    if &ft ==# 'log'
         call log#_filter(a:file, s:match_all)
     else
         set ft=log
@@ -131,9 +130,6 @@ endfunc
 
 
 function! log#Ignore(mode) abort
-    if &ft !=# 'log'
-        return
-    endif
     if a:mode == 0
         let s:ignore = s:dark
     elseif a:mode == 1
@@ -143,7 +139,7 @@ function! log#Ignore(mode) abort
     elseif a:mode == 3
         let s:ignore = s:ignore_org
     endif
-    exec "hi Ignore ctermfg=". s:ignore
+    exec "hi NonText ctermfg=". s:ignore
 endfunc
 
 
