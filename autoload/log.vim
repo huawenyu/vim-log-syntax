@@ -7,6 +7,7 @@ function! s:__init__()
     let s:ignore_org = synIDattr(synIDtrans(hlID('NonText')), 'fg')
     let s:normal = synIDattr(synIDtrans(hlID('Normal')), 'fg')
     let s:dark = 233
+    let s:blacklist = ['c', 'h', 'hpp', 'C', 'c++', 'cpp', 'vim', 'py', 'txt']
 
     let s:match_all = [
         \ '\V deny ',
@@ -129,6 +130,13 @@ function! log#log(file) abort
         if &ft ==# 'log'
             call log#_filter(a:file, s:match_all)
         else
+            if index(s:blacklist, &ft) >= 0
+                let ans = input("Set ft=log? ", 'N')
+                if ans !=# 'Y' && ans != 'y'
+                    return
+                endif
+            endif
+
             set ft=log
         endif
     endif
