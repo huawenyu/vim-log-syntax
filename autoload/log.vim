@@ -6,7 +6,7 @@ function! s:__init__()
     let s:ignore = synIDattr(synIDtrans(hlID('NonText')), 'fg')
     let s:ignore_org = synIDattr(synIDtrans(hlID('NonText')), 'fg')
     let s:normal = synIDattr(synIDtrans(hlID('Normal')), 'fg')
-    let s:dark = 233
+    let s:bg_color = exists("g:bg_color") ? g:bg_color : 233
     let s:blacklist = ['c', 'h', 'hpp', 'C', 'c++', 'cpp', 'vim', 'py', 'txt']
 
     let s:match_all = [
@@ -148,11 +148,11 @@ function! log#Ignore(perct) abort
     if a:perct == 0
         return
     elseif a:perct == 1
-        let s:ignore = s:dark
+        let s:ignore = s:bg_color
     elseif a:perct == 9
         let s:ignore = s:normal
     elseif a:perct >= 2 && a:perct <= 8
-        let s:ignore = s:dark + ((s:normal - s:dark) * a:perct / 10)
+        let s:ignore = s:bg_color + ((s:normal - s:bg_color) * a:perct / 10)
     endif
     exec "hi NonText ctermfg=". s:ignore
     exec "hi SpecialKey ctermfg=". s:ignore
