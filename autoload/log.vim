@@ -102,7 +102,9 @@ function! log#_filter(file, f_list) abort
     call s:SortUniqQFList()
     let w_qf = genutils#GetQuickfixWinnr()
     if w_qf == 0
+        call genutils#MarkActiveWindow()
         copen
+        call genutils#RestoreActiveWindow()
     endif
 endfunc
 
@@ -121,23 +123,28 @@ endfunc
 
 
 function! log#log(file) abort
-    if &ft ==# 'log'
-        call log#_filter(a:file, s:match_all)
+    if v:count != 0
+        call log#Ignore(v:count)
     else
-        set ft=log
+        if &ft ==# 'log'
+            call log#_filter(a:file, s:match_all)
+        else
+            set ft=log
+        endif
     endif
 endfunc
 
 
-function! log#Ignore(mode) abort
-    if a:mode == 0
+" 0 default, 1 invisible, 9 same-normal, 2-8 percentage
+function! log#Ignore(perct) abort
+    if a:perct == 0
+        return
+    elseif a:perct == 1
         let s:ignore = s:dark
-    elseif a:mode == 1
+    elseif a:perct == 9
         let s:ignore = s:normal
-    elseif a:mode == 2
-        let s:ignore = s:ignore_org - ((s:ignore_org + 1 - s:dark) / 2)
-    elseif a:mode == 3
-        let s:ignore = s:ignore_org
+    elseif a:perct >= 2 && a:perct <= 8
+        let s:ignore = s:dark + ((s:normal - s:dark) * a:perct / 10)
     endif
     exec "hi NonText ctermfg=". s:ignore
     exec "hi SpecialKey ctermfg=". s:ignore
