@@ -140,6 +140,7 @@ function! log#Ignore(mode) abort
         let s:ignore = s:ignore_org
     endif
     exec "hi NonText ctermfg=". s:ignore
+    exec "hi SpecialKey ctermfg=". s:ignore
 endfunc
 
 
