@@ -16,11 +16,11 @@ syn match   log_trace           '\vT\@.*$'
 
 syn match   ipaddr              /\(\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)\.\)\{3\}\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)/
 "syn match  ipportall            /\(:[0-9]\{1,5}\)/
-syn match   ipport              /443/
-syn match   ipport              /:443/
-syn match   ipport              /:80/
-syn match   ipport              /:8080/
-syn match   ipport              /:8010/
+syn match   ipport              /443[^0-9]/
+syn match   ipport              /:443[^0-9]/
+syn match   ipport              /:80[^0-9]/
+syn match   ipport              /:8080[^0-9]/
+syn match   ipport              /:8010[^0-9]/
 
 "syn region log_string          start=/'/ end=/'/ end=/$/ skip=/\\./
 "syn region log_string          start=/"/ end=/"/ skip=/\\./
@@ -51,6 +51,7 @@ syn keyword   KeywordEqStr      policy action nextgroup=mKeywordEqStr skipwhite
 
 syn keyword  KeywordVals        bypass
 syn match    MatchVals          'POLICY DENIED'
+syn match    MatchVals          'no cipher suite found drop='
 
 syn match    MatchNonText       '\v^<wad_http_send_http_line_port>.*$'
 syn match    MatchNonText       '\v^<wad_cache_http_send_http_line_port>.*$'
@@ -72,7 +73,6 @@ syn match    MatchNonText       '\v^<wad_http_parse_content_type>.*$'
 syn match    MatchNonText       '\v^<wad_chc_preparse_user_agent>.*$'
 syn match    MatchNonText       '\v^<wad_chc_preparse_referer>.*$'
 syn match    MatchNonText       '\v^<wad_chc_preparse_connection>.*$'
-syn match    MatchNonText       '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
 syn match    MatchNonText       '\v^<wad_fmem_open>.*$'
 syn match    MatchNonText       '\v^<wad_mem_block_pool_alloc>.*$'
 syn match    MatchNonText       '\v^<__wad_mem_block_alloc>.*$'
@@ -87,7 +87,6 @@ syn match    MatchNonText       '\v^<wad_ssl_port_caps_on_enc_start>.*$'
 syn match    MatchNonText       '\v^<wad_ssl_port_caps_on_enc_done>.*$'
 syn match    MatchNonText       '\v^<wad_tcp_port_transport_read_block>.*$'
 syn match    MatchNonText       '\v^<wad_tcp_port_out_read_block>.*$'
-syn match    MatchNonText       '\v^<wad_ssl_port_unsupported_ciphers_num>.*$'
 syn match    MatchNonText       '\v^<wad_http_send_http_line>.*$'
 syn match    MatchNonText       '\v^<wad_user_node_stats_put>.*$'
 syn match    MatchNonText       '\v^<wad_http_stream_get_line>.*$'

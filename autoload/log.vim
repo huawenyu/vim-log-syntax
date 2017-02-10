@@ -156,6 +156,7 @@ function! log#Ignore(perct) abort
     endif
     exec "hi NonText ctermfg=". s:ignore
     exec "hi SpecialKey ctermfg=". s:ignore
+    "redraw
 endfunc
 
 
