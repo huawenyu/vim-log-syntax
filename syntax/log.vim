@@ -51,6 +51,7 @@ syn keyword   KeywordEqStr      policy action nextgroup=mKeywordEqStr skipwhite
 
 syn keyword  KeywordVals        bypass
 syn match    MatchVals          'POLICY DENIED'
+syn match    MatchVals          'URL Redirected'
 syn match    MatchVals          'no cipher suite found drop='
 
 syn match    MatchNonText       '\v^<wad_http_send_http_line_port>.*$'
