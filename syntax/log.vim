@@ -18,11 +18,6 @@ syn match   log_trace           '\vT\@.*$'
 
 syn match   ipaddr              /\(\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)\.\)\{3\}\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)/
 "syn match  ipportall            /\(:[0-9]\{1,5}\)/
-syn match   ipport              /443[^0-9]/
-syn match   ipport              /:443[^0-9]/
-syn match   ipport              /:80[^0-9]/
-syn match   ipport              /:8080[^0-9]/
-syn match   ipport              /:8010[^0-9]/
 
 "syn region log_string          start=/'/ end=/'/ end=/$/ skip=/\\./
 "syn region log_string          start=/"/ end=/"/ skip=/\\./
@@ -45,6 +40,7 @@ syn keyword  KeywordBasic       ret return accept https dns expires read write c
 syn keyword  KeywordBasic       deny
 syn keyword  KeywordBasic       RET RETURN CONNECT ACCEPT HTTP HTTPS FTP DNS EXPIRES READ WRITE SOCK GET CLOSE CLOSED FREE HOST NULL NIL
 syn keyword  KeywordBasic       DENY
+syn keyword  KeywordBasic       443 8080 80 8010
 
 syn keyword   KeywordEqNum      sock fd policy action nextgroup=mKeywordEqNum1,mKeywordEqNum2 skipwhite
 
@@ -102,6 +98,10 @@ syn match    MatchNonText       '\v^<wad_hauth_user_node_alloc>.*$'
 syn match    MatchNonText       '\v^<wad_user_node_stats_hold>.*$'
 syn match    MatchNonText       '\v^<wad_http_conn_request_classify>.*$'
 
+syn match    BigNumber          /\<\d\{8,8}\>/
+syn match    BigNumber2         /\<\d\{9,9}\>/
+syn match    BigNumber3         /\<\d\{10,}\>/
+
 hi def link  log_string         String
 "hi def link log_number         Number
 "hi def link log_date           Constant
@@ -119,6 +119,9 @@ hi def link  KeywordVals        IncSearch
 hi def link  MatchVals          IncSearch
 hi def link  log_trace          NonText
 hi def link  MatchNonText       NonText
+hi def link  BigNumber          Identifier
+hi def link  BigNumber2         String
+hi def link  BigNumber3         Constant
 
 hi def link  rdocInlineURL      Identifier
 hi  def link mKeywordEqNum1     WarningMsg
